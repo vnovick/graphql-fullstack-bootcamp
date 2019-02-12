@@ -11,6 +11,8 @@ You can read more about Hasura [here](https://medium.com/open-graphql/effortless
 
 Access Hasura console on localhost:8080/console
 
+If you want to play around with your local version of postgres check this docs [link](https://docs.hasura.io/1.0/graphql/manual/getting-started/docker-simple.html)
+
 - starwars api
 
 [GraphiQL](https://graphql-bootcamp-swapi.herokuapp.com)
@@ -39,20 +41,20 @@ query {
 2. How to execute graphql request as curl
 
 
-# Queries 
+# Queries
 
 3. Get first 5 planets in Star Wars universe along with their name, diameter, rotation period, residents. For each resident display it's name, species, classification and spoken language. Also for each resident display vehicles that he used as well as in which movies they appeared
 
 
 4. Get `subject` and `content` of `posts` ordered by `timestamp` ascending. Represent data as `ordered_posts` array
-  
+
 
 # Mutations
 
 5. Add new blog post
 6. Add a new user using GraphQL Mutation
-7. Create reusable insert mutation called addPost, which not only will insert a post, but create new user and profile 
-   
+7. Create reusable insert mutation called addPost, which not only will insert a post, but create new user and profile
+
    > Hint: use variables
 
 
