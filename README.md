@@ -1,7 +1,7 @@
 # graphql-fullstack-bootcamp
 Complimentary repo to https://tylermcginnis.com/free-graphql-bootcamp/ bootcamp by Vladimir Novick
 
-Slides will be available at the beginning of Day1:
+Slides are available [here](https://slides.com/vladimirnovick/graphql-fullstack-bootcamp):
 
 # Prerequisites 
 
