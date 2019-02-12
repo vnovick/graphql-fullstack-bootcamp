@@ -41,20 +41,20 @@ query {
 2. How to execute graphql request as curl
 
 
-# Queries
+# Queries 
 
 3. Get first 5 planets in Star Wars universe along with their name, diameter, rotation period, residents. For each resident display it's name, species, classification and spoken language. Also for each resident display vehicles that he used as well as in which movies they appeared
 
 
 4. Get `subject` and `content` of `posts` ordered by `timestamp` ascending. Represent data as `ordered_posts` array
-
+  
 
 # Mutations
 
 5. Add new blog post
 6. Add a new user using GraphQL Mutation
-7. Create reusable insert mutation called addPost, which not only will insert a post, but create new user and profile
-
+7. Create reusable insert mutation called addPost, which not only will insert a post, but create new user and profile 
+   
    > Hint: use variables
 
 
