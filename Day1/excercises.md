@@ -11,6 +11,8 @@ You can read more about Hasura [here](https://medium.com/open-graphql/effortless
 
 Access Hasura console on localhost:8080/console
 
+If you want to play around with your local version of postgres check this docs [link](https://docs.hasura.io/1.0/graphql/manual/getting-started/docker-simple.html)
+
 - starwars api
 
 [GraphiQL](https://graphql-bootcamp-swapi.herokuapp.com)
