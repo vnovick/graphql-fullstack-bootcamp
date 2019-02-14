@@ -1,0 +1,40 @@
+type Query {
+  posts: [Post!]!
+  post(id: ID!): Post
+  description: String!
+}
+
+type Mutation {
+  createDraft(title: String!, content: String, author: String!): Post
+  addComment(id: ID!, content: String!): ID
+  deletePost(id: ID!): Post
+  publish(id: ID!): Post
+}
+
+type Subscription {
+  posts: [Post!]!
+}
+
+"Description for the type"
+type Post {
+  """
+    ## Description for field
+  """
+  id: ID!
+  title: String!
+  content: String!
+  published: Boolean!
+  author: Author!
+  comments: [Comment]
+}
+
+
+type Author {
+  id: ID!
+  name: String!
+}
+
+type Comment {
+  id: ID!
+  content: String!
+}
