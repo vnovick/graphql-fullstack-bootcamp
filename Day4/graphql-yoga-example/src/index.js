@@ -2,12 +2,13 @@ const { GraphQLServer, PubSub } = require('graphql-yoga')
 const { GraphQLScalarType } = require('graphql');
 const { Kind } = require('graphql/language');
 
+
 let idCount = 0
 let posts = []
 const channel = Math.random().toString(36).substring(2, 15)
 
-function oddValue(value){
-  return value % 2 === 1 ? value : null
+function oddValue(value) {
+  return value % 2 === 1 ? value : null;
 }
 
 const resolvers = {
@@ -15,46 +16,17 @@ const resolvers = {
     posts: () => posts,
     post: (parent, args) => posts.find(post => post.id === args.id),
   },
-  Odd: new GraphQLScalarType({
-    name: 'Odd',
-    description: 'Odd custom scalar',
-    parseValue: oddValue,
-    serialize: oddValue,
-    parseLiteral(ast) {
-      if (ast.kind === Kind.INT) {
-        return oddValue(parseInt(ast.value, 10))
-      }
-      return null
-    }
-  }),
-  Date: new GraphQLScalarType({
-    name: 'Date',
-    description: 'Date custom scalar type',
-    parseValue(value) {
-      return new Date(value); // value from the client
-    },
-    serialize(value) {
-      return value.getTime(); // value sent to the client
-    },
-    parseLiteral(ast) {
-      if (ast.kind === Kind.INT) {
-        return new Date(ast.value) // ast value is always in string format
-      }
-      return null;
-    },
-  }),
   Mutation: {
-    createDraft: (parent, { object }) => {
+    createDraft: (parent, { object: args }) => {
       const post = {
         id: `post_${idCount++}`,
-        title: object.title,
-        content: object.content,
-        date: object.date,
-        oddNumber: object.oddNumber,
+        title: args.title,
+        content: args.content,
+        date: args.date,
         comments: [],
         author: {
           id: `author_${new Date().getMilliseconds()}`,
-          name: object.author
+          name: args.author
         },
         published: false,
       }
@@ -92,6 +64,23 @@ const resolvers = {
       return posts[postIndex]
     },
   },
+  
+  Date: new GraphQLScalarType({
+    name: 'Date',
+    description: 'Date custom scalar type',
+    parseValue(value) {
+      return new Date(value); // value from the client
+    },
+    serialize(value) {
+      return value.getTime(); // value sent to the client
+    },
+    parseLiteral(ast) {
+      if (ast.kind === Kind.INT) {
+        return new Date(ast.value) // ast value is always in string format
+      }
+      return null;
+    },
+  }),
   Subscription: {
     posts: {
       subscribe: (parent, args, { pubsub }) => {
@@ -100,6 +89,15 @@ const resolvers = {
       },
     }
   },
+  HasContent: {
+    __resolveType(obj){
+      if (obj.title){
+        return 'Post'
+      } else {
+        return 'Comment'
+      }
+    }
+  }
 }
 
 const pubsub = new PubSub()
