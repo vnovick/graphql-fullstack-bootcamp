@@ -1,10 +1,20 @@
 # Exercises Day1
+
+[Install Hasura on Heroku](https://docs.hasura.io/1.0/graphql/manual/getting-started/heroku-simple.html)
+
+Go to Heroku dashboard 
+Settings -> Reveal config vars.
+Copy DATABASE_URL
+
 Install Hasura Console on local environment
 
 ### Prerequisites
 For running GraphQL Api locally [Install Docker](https://docs.docker.com/install/)
 
+Edit `./run-hasura-locally.sh` and substitute HASURA_GRAPHQL_DATABASE_URL to the one you've got from heroku
+
 then run `./run-hasura-locally.sh`
+
 
 This will bring up docker container with Hasura engine with connection to existing Postgres API
 You can read more about Hasura [here](https://medium.com/open-graphql/effortless-real-time-graphql-api-with-serverless-business-logic-running-in-any-cloud-8585e4ed6fa3)
