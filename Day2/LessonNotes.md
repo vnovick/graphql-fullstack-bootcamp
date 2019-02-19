@@ -1,6 +1,6 @@
 # Consume GraphQL API from Vanilla JS
 
-[Consume GraphQL API](https://codesandbox.io/s/p9828pn87)
+[Consume GraphQL API](https://codesandbox.io/s/lx2q2nr6p9)
 
 
 # Apollo
