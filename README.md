@@ -3,6 +3,8 @@ Complimentary repo to https://tylermcginnis.com/free-graphql-bootcamp/ bootcamp 
 
 Slides are available [here](https://slides.com/vladimirnovick/graphql-fullstack-bootcamp):
 
+Videos are available [here](https://www.youtube.com/watch?v=Jl7oYk7Ye9E&list=PL28aKhmSneX86qqmzVNjwYJ1OZORPFxAr)
+
 # Prerequisites 
 
 ## Day1
